@@ -1,1 +1,3 @@
-login register + firebase integration
+- login register + firebase integration
+- initialize web3 contracts via thirdweb
+- create project, interact with contract
