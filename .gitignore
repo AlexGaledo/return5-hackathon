@@ -1,0 +1,9 @@
+firebase
+.env
+Flask 
+flask-jwt-extended 
+flask-cors 
+bcrypt
+firebase_key
+node_modules
+secrets
