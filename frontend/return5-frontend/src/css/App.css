@@ -1,4 +1,4 @@
 :root{
     background: linear-gradient(to bottom,#0D0D0D,#13070F,#8D3974);
-    height: 100%;
+    height: max-content;
 }

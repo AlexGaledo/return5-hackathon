@@ -23,11 +23,10 @@ export default function Header() {
     <div className="header-area">
       <p className="project-title">BayaniHub</p>
       <div className="navtoolbox">
-        <p className="navtools">About</p>
-        <p className="navtools">Home</p>
-        <p className="navtools">Projects</p>
-          <ConnectButton client={client} chain={sepolia} appMetadata={{name: "Return5", url: "http://localhost:5173",}}></ConnectButton>
-
+        <p className="navtools">Courses & Certification</p>
+        <p className="navtools">Browse Projects</p>
+        <p className="navtools">Wallet</p>
+        <button className="login-button">Login</button>
       </div>
     </div>
   );
