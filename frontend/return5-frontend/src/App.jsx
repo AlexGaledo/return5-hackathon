@@ -8,6 +8,7 @@ import CreateProject from "./pages/createProject";
 import RouteLock from "./components/routelock";
 import Home from "./pages/Home";
 import { BrowseProjects } from "./pages/BrowseProjects";
+import { LandingPage } from "./pages/LandingPage";
 
 export const userContext = createContext();
 export const themeContext = createContext();
@@ -37,9 +38,9 @@ export default function App() {
         <userContext.Provider value={{ user, setUser }}> 
         <projectsContext.Provider value={{ projects, setProjects}}>
         {/*-------------------------------------------------------------------------------------------------*/}
-            {loginStatus && <Header/>}
+            <Header/>
             <Routes>
-                <Route path="/" element={<LoginPage/>}/>
+                <Route path="/" element={<LandingPage/>}/>
                 <Route path="*" element={<ErrorPage/>}/>
                 <Route path="sign-account" element={<LoginPage/>}/>
                 {/* Rquires login status */}

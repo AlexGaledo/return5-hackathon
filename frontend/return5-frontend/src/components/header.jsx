@@ -1,14 +1,19 @@
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useRef } from "react";
 import { walletContext } from "../App";
 import { sepolia } from "thirdweb/chains";
 import { client } from "../api/thirdweb"; // your Thirdweb client
 
 
-
 export default function Header() {
   const account = useActiveAccount();
   const { setWallet } = useContext(walletContext);
+
+  const handleClick = () => {
+    if (buttonRef.current) {
+      buttonRef.current.click(); // simulate click
+    }
+  };
 
   useEffect(() => {
     setWallet(account?.address || null);
@@ -16,20 +21,13 @@ export default function Header() {
 
   return (
     <div className="header-area">
+      <p className="project-title">BayaniHub</p>
       <div className="navtoolbox">
-        <h1 className="navtools">|About|</h1>
-        <h1 className="navtools">|Home|</h1>
-        <h1 className="navtools">|Projects|</h1>
+        <p className="navtools">About</p>
+        <p className="navtools">Home</p>
+        <p className="navtools">Projects</p>
+          <ConnectButton client={client} chain={sepolia} appMetadata={{name: "Return5", url: "http://localhost:5173",}}></ConnectButton>
 
-        <ConnectButton
-          client={client}
-          chain={sepolia}
-          appMetadata={{
-            name: "Return5",
-            url: "http://localhost:5173",
-          }}
-
-        />
       </div>
     </div>
   );
