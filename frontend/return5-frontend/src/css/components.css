@@ -1,9 +1,22 @@
-
-.header-area .navtoolbox{
-    background-color: aqua;
+.header-area, .navtoolbox{
     display: flex;
     height: 4rem;
+    font-family: Inter;
+    color: white;
+    font-size: 20px;
+    margin-top: 40px;
 }
+
+
+.header-area{
+    flex-direction: row;
+    margin-left: 70px;
+}
+
+.navtoolbox{
+    margin-left: 30%;
+}
+
 .header-area .navtoolbox .navtools{
     margin: 10px;
 }
