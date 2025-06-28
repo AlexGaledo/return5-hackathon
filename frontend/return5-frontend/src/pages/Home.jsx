@@ -26,6 +26,8 @@ export default function Home(){
         
     }
 
+
+
     return(
         <div className="home-page">
         <button className="home-option-buttons"onClick={createProject} disabled={isLoading}>

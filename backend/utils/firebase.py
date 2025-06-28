@@ -85,4 +85,24 @@ def does_project_exist(project_data):
     return len(existing) > 0  # Explicitly check if any results exist
 
 
+def get_all_projects():
+    try:
+        projects_ref = db.collection('projects')
+        projects = projects_ref.limit(5).get()
+
+        
+        #limited to 6 projects for the response
+        all_projects = []
+        for project in projects:
+            project_data = project.to_dict()
+            project_data['id'] = project.id
+            all_projects.append(project_data)
+        
+        return all_projects
+    
+    except Exception as e:
+        print(f'Error fetching all projects: {e}')
+        return []  # Return an empty list on error
+
+
 

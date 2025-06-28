@@ -22,6 +22,7 @@ def create_project_route():
             'project_description': request_data.get('project-description'),
             'project_goal': request_data.get('project-goal'),
             'project_duration': request_data.get('project-duration'),
+            'funding_type': request_data.get('funding-type')
         }
 
         project_id = create_project(project_data)

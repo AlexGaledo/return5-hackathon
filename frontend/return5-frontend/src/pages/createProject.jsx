@@ -19,6 +19,7 @@ export default function CreateProject() {
   const [projectDescription, setProjectDescription] = useState("");
   const [projectGoal, setProjectGoal] = useState("");
   const [projectDuration, setProjectduration] = useState("");
+  const [fundingType, setFundingType] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +38,9 @@ export default function CreateProject() {
         "project-description": projectDescription,
         "project-goal": projectGoal,
         "project-duration": projectDuration,
+        "funding-type": fundingType,
       };
+
       //thirdweb contract call to create project
       const transaction = prepareContractCall({
       contract:contract,
@@ -45,6 +48,7 @@ export default function CreateProject() {
             "function createProject(string _name, string _description, uint256 _goal, uint256 _durationInDays)",
         params: [projectTitle, projectDescription, projectGoal, projectDuration],
       }); await sendTransaction(transaction);
+
       //backend call
       const res = await axios.post("/create/", project_data);
       if (res.status === 200) {
@@ -73,6 +77,11 @@ export default function CreateProject() {
 
       <label>Deadline (days)</label>
       <input type="number" required onChange={(e) => setProjectduration(e.target.value )} min={0} />
+        
+      <label>Funding Type</label>
+      <input type="text" required onChange={(e) => setFundingType(e.target.value)}/>
+
+        
 
       <button type="submit">Create Project</button>
     </form>
