@@ -7,3 +7,4 @@ bcrypt
 firebase_key
 node_modules
 secrets
+__pycache__

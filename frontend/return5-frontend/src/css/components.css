@@ -1,0 +1,9 @@
+
+.header-area .navtoolbox{
+    background-color: aqua;
+    display: flex;
+    height: 4rem;
+}
+.header-area .navtoolbox .navtools{
+    margin: 10px;
+}

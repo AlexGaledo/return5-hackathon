@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import  BASE_URL from '../api/axios'
-import { loginStatusContext } from "../App";
+import { loginStatusContext, userContext } from "../App";
 import { loadingContext } from "../App";
 import { useNavigate } from "react-router-dom";
 
@@ -13,15 +13,18 @@ export default function LoginPage() {
     const [formRegistate, setFormRegistate] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const { isLoading, setIsLoading} = useContext(loadingContext);
+    const { isLoading, setIsLoading } = useContext(loadingContext);
+    const { setUser } = useContext(userContext);
+
 
     const loginForm = async (e) =>{
+        
         e.preventDefault();
-        setIsLoading(true);
         if (isLoading) {
             alert('processing...')
             return;
         }
+        setIsLoading(true);    
 
         try {
             const res = await BASE_URL.post('/login/',{
@@ -29,8 +32,9 @@ export default function LoginPage() {
                 'password':password
             });
 
-            localStorage.setItem('current_id', res.data.uid);
+            localStorage.setItem('current_id', res.data.id);
             localStorage.setItem('token',res.data.access_token);
+            setUser(res.data);
             setLoginStatus(!loginStatus);
             alert('loggedin');// change later to better ui
             navigate('/home');
@@ -44,23 +48,26 @@ export default function LoginPage() {
             setUsername('')
             setPassword('')
         }
-            
+        
     
     }
 
     const registerForm = async (e) =>{
+        
         e.preventDefault();
         if (isLoading) {
             alert('processing...')
             return;
         }
+        setIsLoading(true);
+
+        
 
         try {
             const res  = await BASE_URL.post('/register/',{
                 'username':username,
                 'password':password
             });
-            navigate('/home');
             alert(`${res.data?.response}`)
         } catch (err) {
             const error = err.response?.data?.response;

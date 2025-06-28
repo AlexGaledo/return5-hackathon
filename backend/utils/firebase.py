@@ -41,4 +41,48 @@ def create_user(username,hashedpw):
         print(f'unexpected error occured ${e}')
 
         return False
+    
+
+#find project by id
+def get_project(project_id):
+    try:
+        project_ref = db.collection('projects').document(project_id)
+        project_doc = project_ref.get()
+
+        if project_doc.exists:
+            data = project_doc.to_dict()
+            data['id'] = project_doc.id
+            return data
+        else:
+            return None
+        
+    except Exception as e:
+        print(f'Error fetching project: {e}')
+        return None
+    
+
+#create project in firebase return project id
+def create_project(project_data):
+    try:
+        if does_project_exist(project_data):
+            print("Duplicate project title found for this user.")
+            return None
+
+        projects_ref = db.collection('projects')
+        new_project = projects_ref.document()
+        project_data['id'] = new_project.id
+        new_project.set(project_data)
+        return new_project.id
+
+    except Exception as e:
+        print(f'Error creating project: {e}')
+        return None
+    
+def does_project_exist(project_data):
+    existing = db.collection('projects')\
+        .where('project_title', '==', project_data['project_title']).get()
+    
+    return len(existing) > 0  # Explicitly check if any results exist
+
+
 

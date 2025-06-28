@@ -26,9 +26,9 @@ def login():
     token = create_access_token(identity=user_doc['id'])
 
     return jsonify({
-        'id' : user_doc['id'],
-        'access_token' : token,
-        'response ': 'user logged in'
+        'id': user_doc['id'],
+        'access_token':token,
+        'response':'user logged in'
     }),200
 
 

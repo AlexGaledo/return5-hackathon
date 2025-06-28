@@ -1,14 +1,22 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import './css/login.css'
-import './css/App.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-createRoot(document.getElementById('root')).render(
+import "./css/pages.css";
+import "./css/App.css";
+import "./css/components.css";
+
+import App from "./App.jsx";
+
+import { ThirdwebProvider } from "thirdweb/react";
+import { client } from "./api/thirdweb"; // createThirdwebClient is defined here
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-  <BrowserRouter>
-    <App/>
-  </BrowserRouter>
+    <ThirdwebProvider client={client}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThirdwebProvider>
   </StrictMode>
-)
+);

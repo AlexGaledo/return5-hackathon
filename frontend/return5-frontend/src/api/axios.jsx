@@ -9,4 +9,27 @@ const axiosInstance = axios.create({
   },
 });
 
+// automatically add jwt tokens
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
+
+    // Skip adding Authorization for login/register
+    const publicPaths = ['/login/', '/register/'];
+    const isPublic = publicPaths.some(path => config.url?.endsWith(path));
+
+    if (token && !isPublic) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+
+
+
 export default axiosInstance;
