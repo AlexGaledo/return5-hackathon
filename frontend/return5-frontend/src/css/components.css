@@ -131,6 +131,7 @@
     margin-left: 70px;
     width: 95.7%;
     height: 820px;
+    margin-bottom: 200px;
 }
 
 .build-startup-text{
@@ -139,7 +140,7 @@
     width: 40%;
 }
 
-.topic1, .explanation1{
+.topic1, .explanation1, .topic2, .explanation2{
     font-size: 24px;
     margin-bottom: 40px;
 }
@@ -148,7 +149,7 @@
     line-height: 0.4;
 }
 
-.explanation1{
+.explanation1, .explanation2{
     color: #C5ADBF;
     line-height: 1.4;
 }
@@ -184,5 +185,114 @@
     margin-left: 60px;
 }
 
+.explore-courses-container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 70px;
+    width: 1310px;
+    height: 530px;
+    gap: 30px;
+    margin-bottom: 200px;
+}
 
+.course{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 530px;
+    font-family: inter;
+    color: white;
+}
+
+.topic2{
+    
+    margin-bottom: 0px;
+}
+
+.community-title, .explore-courses-title{
+    margin-left: 70px;
+    font-size: 48px;
+    font-family: inter;
+    font-weight: 600;
+    color: white;
+}
+
+.community-container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 70px;
+    width: 1340px;
+    height: 300px;
+    gap: 50px;
+}
+
+.community{
+    width: 420px;
+    height: 300px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.community-text{
+    display: flex;
+    width: 345px;
+    height: 110px;
+    color: white;
+    font-family: inter;
+    font-size: 24px;
+    margin: 30px;
+    margin-top: 55px;
+}
+
+.community-name{
+    display: flex;
+    flex-direction: row;
+    width: 260px;
+    height: 60px;
+    margin: 30px;
+}
+
+.community-picture{
+    width: 60px;
+    height: auto;
+}
+
+.community-description{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: auto;
+    color: white;
+    line-height: 0px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-family: inter; 
+}
+
+.AvatarPNG{
+    width: inherit;
+    height: auto;
+    object-fit: cover;
+}
+
+.profession{
+    color: #828282;
+}
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 200px;
+}
+
+.top-button{
+    margin-right: 50px;
+    width: 180px;
+    height: 60px;
+    color: white;
+    background-color: #2B082078;
+    font-size: 24px;
+    font-family: inter;
+    border-radius: 10px;
+}
 
