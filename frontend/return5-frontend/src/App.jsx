@@ -39,11 +39,11 @@ export default function App() {
         <projectsContext.Provider value={{ projects, setProjects}}>
         {/*-------------------------------------------------------------------------------------------------*/}
             <Routes>
-                <Route path="/" element={<LoginPage/>}/>
+                <Route path="/" element={<LandingPage/>}/>
                 <Route path="*" element={<ErrorPage/>}/>
                 <Route path="sign-account" element={<LoginPage/>}/>
                 {/* Rquires login status */}
-                <Route path="/home" element = {<RouteLock><Home/></RouteLock>}/>
+                <Route path="/home" element = {<Home/>}/>
                 <Route path="/create-project/:projectRouteId" element={<RouteLock><CreateProject/></RouteLock>}/>
                 <Route path="/browse-projects" element={<RouteLock><BrowseProjects/></RouteLock>}/>
             </Routes>

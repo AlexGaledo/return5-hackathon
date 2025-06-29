@@ -8,9 +8,12 @@ import Startup from '../assets/Startup.png';
 import Avatar1 from '../assets/Avatar1.png';
 import Avatar2 from '../assets/Avatar2.png';
 import Avatar3 from '../assets/Avatar3.png';
+import Header from '../components/header';
+import Footer from '../components/footer';
 export const LandingPage = () =>{
   return(
     <>
+    <Header/>
     <div className="title-container">
       <p className="title">Launch Your Tech Startup</p>
       <p className="title2">with Confidence</p>
@@ -122,10 +125,8 @@ export const LandingPage = () =>{
 
     <div className="button-container">
         <button className='top-button'>Back to Top</button>
-      </div>
+    </div>
+    <Footer/>
     </>
-
-    
-    
   )
 }
