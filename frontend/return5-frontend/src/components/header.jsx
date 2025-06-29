@@ -3,16 +3,16 @@ import { useEffect, useContext, useRef } from "react";
 import { walletContext } from "../App";
 import { sepolia } from "thirdweb/chains";
 import { client } from "../api/thirdweb"; // your Thirdweb client
+import { useNavigate } from "react-router-dom";
 
 
 export default function Header() {
   const account = useActiveAccount();
+  const navigate = useNavigate();
   const { setWallet } = useContext(walletContext);
 
-  const handleClick = () => {
-    if (buttonRef.current) {
-      buttonRef.current.click(); // simulate click
-    }
+  const handleLogin = () => {
+      navigate("/login");
   };
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Header() {
         <p className="navtools">Courses & Certification</p>
         <p className="navtools">Browse Projects</p>
         <p className="navtools">Wallet</p>
-        <button className="login-button">Login</button>
+        <button className="login-button"onClick={handleLogin}>Login</button>
       </div>
     </div>
   );
