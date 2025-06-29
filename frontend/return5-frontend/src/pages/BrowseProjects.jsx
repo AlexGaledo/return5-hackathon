@@ -18,7 +18,6 @@ export const BrowseProjects = () => {
 
     return(
         <>
-            <Header/>
             <div className="project-name-container">
                 <div className="project-name-left">
                     <img src={Project5} className='Project5PNG'/>
@@ -28,7 +27,7 @@ export const BrowseProjects = () => {
                     <div className="project-name-subheading">Subheading</div>
                     <div className="project-funding-text">Funding goal + Funding Type</div>
                     <div className="project-description">Body text Body text Body text Body text Body text Body text Body text Body text Body text</div>
-                    <button className="see-startup-button">See Startup</button>
+                    <button className="see-startup-button">View more details</button>
                     <div className="additional-details">Text box for additional details or fine print</div>
                 </div>
             </div>

@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <div className="header-area">
-      <p className="project-title">BayaniHub</p>
+      <p className="project-title">TechTopia</p>
       <div className="navtoolbox">
         <p className="navtools">Courses & Certification</p>
         <p className="navtools" onClick={browseProjects}>Browse Projects</p>

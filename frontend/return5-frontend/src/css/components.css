@@ -381,6 +381,11 @@
     font-family: inter;
     font-weight: 500;
     border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.get-started:hover{
+    transform: scale(1.05);
 }
 
 .introduction3{
@@ -406,6 +411,7 @@
     font-family: inter;
     margin-bottom: 100px;
 }
+
 
 .project-left, .project-right, .project-right2{
     width: 50%;
@@ -437,6 +443,11 @@
     font-size: 24px;
     font-family: inter;
     border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-overview-button:hover, .project-overview-button2:hover{
+    transform: scale(1.05);
 }
 
 .project-overview-button2{
@@ -640,6 +651,8 @@
     font-family: inter;
     color: white;
     gap: 10px;
+    transition: transform 0.2s ease-in-out;
+    
 }
 
 .startup-png{

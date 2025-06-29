@@ -9,7 +9,7 @@ export const Footer = () =>{
     <>
     <div className="footer">
       <div className="footer-left">
-        <div className="footer-project">BayaniHub</div>
+        <div className="footer-project">TechTopia</div>
         <div className="footer-icons">
           <img src={FB} className='IconPNG'/>
           <img src={LinkedIN} className='IconPNG'/>
