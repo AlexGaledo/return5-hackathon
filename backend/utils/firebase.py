@@ -1,18 +1,22 @@
+import os
+import json
 import firebase_admin
 from firebase_admin import credentials, firestore
 from config import Config
 
-cred = credentials.Certificate(Config.firebase_key)
 
+firebase_key_json_str = Config.firebase_key
+
+
+firebase_key_dict = json.loads(firebase_key_json_str)
+
+cred = credentials.Certificate(firebase_key_dict)
 
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 
-
 db = firestore.client()
 
-
-#obtain user data from firebase via username
 def get_user(username):
     try:
         users_ref = db.collection('users')
