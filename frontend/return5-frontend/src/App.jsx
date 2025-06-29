@@ -17,6 +17,7 @@ export const walletContext = createContext();
 export const projectsContext = createContext();
 export const loadingContext = createContext();
 export const userProjectsContext = createContext();
+export const noHeaderContext = createContext();
 
 
 export default function App() {
@@ -27,9 +28,10 @@ export default function App() {
     const [userProjects, setUserProjects] = useState([]);
     const [wallet, setWallet] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [noHeaderPage, setNoHeaderPage] = useState(false);
 
     return (
-
+        <noHeaderContext.Provider value = {{noHeaderPage, setNoHeaderPage}}>
         <userProjectsContext.Provider value = {{userProjects, setUserProjects}}>
         <loadingContext.Provider value={{isLoading, setIsLoading}}>
         <walletContext.Provider value={{wallet, setWallet}}>
@@ -38,10 +40,11 @@ export default function App() {
         <userContext.Provider value={{ user, setUser }}> 
         <projectsContext.Provider value={{ projects, setProjects}}>
         {/*-------------------------------------------------------------------------------------------------*/}
+            {loginStatus && !noHeaderPage && <Header/>}
             <Routes>
                 <Route path="/" element={<LandingPage/>}/>
                 <Route path="*" element={<ErrorPage/>}/>
-                <Route path="sign-account" element={<LoginPage/>}/>
+                <Route path="/login" element={<LoginPage/>}/>
                 {/* Rquires login status */}
                 <Route path="/home" element = {<Home/>}/>
                 <Route path="/create-project/:projectRouteId" element={<RouteLock><CreateProject/></RouteLock>}/>
@@ -55,6 +58,7 @@ export default function App() {
         </walletContext.Provider>
         </loadingContext.Provider>
         </userProjectsContext.Provider>
+        </noHeaderContext.Provider>
 
     );
 }

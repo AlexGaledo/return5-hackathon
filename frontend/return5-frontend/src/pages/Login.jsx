@@ -19,7 +19,6 @@ export default function LoginPage() {
 
 
     const loginForm = async (e) =>{
-        
         e.preventDefault();
         if (isLoading) {
             alert('processing...')
@@ -36,7 +35,7 @@ export default function LoginPage() {
             localStorage.setItem('current_id', res.data.id);
             localStorage.setItem('token',res.data.access_token);
             setUser(res.data);
-            setLoginStatus(!loginStatus);
+            setLoginStatus((prev) => (!prev));
             alert('loggedin');// change later to better ui
             navigate('/home');
 
@@ -54,16 +53,12 @@ export default function LoginPage() {
     }
 
     const registerForm = async (e) =>{
-        
         e.preventDefault();
         if (isLoading) {
             alert('processing...')
             return;
         }
         setIsLoading(true);
-
-        
-
         try {
             const res  = await BASE_URL.post('/register/',{
                 'username':username,

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { loadingContext, projectsContext, userContext } from "../App";
+import { loadingContext, noHeaderContext, projectsContext, userContext } from "../App";
 import { useContext } from "react";
 import Dashboard from '../assets/Dashboard.png';
 import Project1 from '../assets/Project1.png';
@@ -14,11 +14,12 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 
 export default function Home(){
+
     const {isLoading} = useContext(loadingContext);
     const {projects} = useContext(projectsContext);
     const {user} = useContext(userContext);
+    const { setNoHeaderPage } = useContext(noHeaderContext)
     const navigate = useNavigate();
-
 
     const createProject = async () => {
         //if (user)alert(`[debug]${user.id}(${user.access_token}) connected"`);
@@ -33,8 +34,6 @@ export default function Home(){
     const myProjects = () =>{
         
     }
-
-
     return(
         <>
         <Header/>
@@ -130,6 +129,7 @@ export default function Home(){
             </div>
             <Footer/>
         </>
+
     )
 }
 

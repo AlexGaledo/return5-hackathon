@@ -124,5 +124,107 @@
   cursor: pointer;
 }
 
+.home-page{
+  background-color: #007bff;
+  height:100vh;
+
+}
+
+
+/* Crreate Project Page */
+.create-project-container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(to bottom,0D0D0D,13070F,8D3974);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin: 5%;
+}
+
+.create-project-container .start-your-project h1 {
+  font-weight: bold;
+  font-size: 64px;
+  align-content: left;
+  align-items: left;
+  justify-content: left;
+  margin-bottom: -10px;
+}
+
+
+.create-project-container .start-your-project h3 {  
+  font-weight:200;
+  margin-bottom: 5%;
+}
+
+.start-your-project-form {
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.create-project-inputs{
+  margin-top: -1%;
+  align-items: left;
+  justify-content: left;
+
+  
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  margin-left: -2% ;
+  margin-bottom: 10%;
+}
+
+.create-project-submit{
+  height: 4em;
+  width: 90%;
+  margin: 0.5%;
+  margin-top: -100px;
+}
+
+
+.form-group{
+  display:flex;
+  flex-direction: column;
+  margin: 2em;
+  align-items:left;
+
+}
+.create-project-form .rightbox, 
+.create-project-form .leftbox {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.form-group-input{
+  color: grey;
+  background-color: #0D0D0D;
+  width: 500px;
+  border-radius: 8px;
+  height: 40px;
+  resize: vertical;
+}
+
+/*create project header*/
+
+.create-project-header{
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  
+  justify-content: space-between;
+  gap: 70vw;
+  width: max-content;
+  height: auto;
+  margin-left: 3%;
+  margin-top: 1%;
+}
+
+
+
 
 

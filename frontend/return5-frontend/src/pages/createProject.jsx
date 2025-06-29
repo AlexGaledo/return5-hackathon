@@ -1,12 +1,13 @@
-import { useContext, useState } from "react";
-import { loadingContext, userContext } from "../App";
+import { useContext, useEffect, useState } from "react";
+import { loadingContext, userContext, noHeaderContext } from "../App";
 import axios from "../api/axios";
 import { useNavigate } from "react-router-dom";
-import { contract } from "../api/thirdweb";
+import { client, contract } from "../api/thirdweb";
 import { useParams } from "react-router-dom";
 import { prepareContractCall, sendTransaction} from "thirdweb";
-import { defineChain } from "thirdweb/chains";
-import { useSendTransaction } from "thirdweb/react";
+import { defineChain, sepolia } from "thirdweb/chains";
+import { ConnectButton, useSendTransaction } from "thirdweb/react";
+import Header from "../components/header";
 
 export default function CreateProject() {
   const { mutateAsync: sendTransaction } = useSendTransaction();
@@ -14,6 +15,7 @@ export default function CreateProject() {
   const { user } = useContext(userContext);
   const { setIsLoading } = useContext(loadingContext);
   const navigate = useNavigate();
+  const { setNoHeaderPage } = useContext(noHeaderContext)
     
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
@@ -62,28 +64,90 @@ export default function CreateProject() {
     }setIsLoading(false);
   };
 
+  useEffect(() => {
+    setNoHeaderPage(true);
+    return () => setNoHeaderPage(false);
+  }, []);
+
   return (
-    <form className="create-project-form" onSubmit={handleSubmit}>
-      <h2>Create Project</h2>
+    <>
+    
+    <div className="create-project-header">
+        <p className="project-title">{`< back to dashboard `}</p>
+           <ConnectButton s
+          client={client}
+          chain={sepolia}
+          appMetadata={{
+            name: "Return5",
+            url: "http://localhost:5173/"}}/>
+    </div>
 
-      <label>Project Title</label>
-      <input type="text" required onChange={(e) => setProjectTitle(e.target.value)} />
 
-      <label>Description</label>
-      <input type="text" required onChange={(e) => setProjectDescription(e.target.value)} />
+    <div className="create-project-container">
+      <div className="start-your-project">
+        <h1>Start your project</h1>
+        <h3>Your project will go live once verified. Fill in the required details below.</h3>
+        <h2>About your Project</h2>
+      </div>
+        <form className="create-project-form" onSubmit={handleSubmit}>
+          <div className="create-project-inputs">
+            <div className="rightbox">
+              <div className="form-group">
+              <label>Project Title</label>
+              <input type="text" className='form-group-input' required placeholder=" Bayanihub"
+              onChange={(e) => setProjectTitle(e.target.value)}  />
+              </div>
 
-      <label>Goal (in wei)</label>
-      <input type="number" required onChange={(e) => setProjectGoal(e.target.value)} min={0}/>
+              <div className="form-group">
+              <label>Email Address</label>
+              <input type="text" className='form-group-input' required placeholder=" email@fakejamesdomain.net... "/>
+              </div>
+              
+              <div className="form-group">
+                  <label>Description</label>
+                    <textarea style={{ resize: "none", width: "100%", height: "150px" }}
+                      className="form-group-input"
+                      required
+                      rows={3}
+                      onChange={(e) => setProjectDescription(e.target.value)}
+                      placeholder="Enter project description..."
+                    />
+              </div>
+            </div>
+            
+          <div className="leftbox">
+            <div className="form-group">
+                <label>Project Goal (in wei)</label>
+                <input type="number" className='form-group-input' placeholder="0"
+                required onChange={(e) => setProjectGoal(e.target.value)} min={0}/>
+                </div>
 
-      <label>Deadline (days)</label>
-      <input type="number" required onChange={(e) => setProjectduration(e.target.value )} min={0} />
-        
-      <label>Funding Type</label>
-      <input type="text" required onChange={(e) => setFundingType(e.target.value)}/>
+                <div className="form-group">
+                <label>Duration (days)</label>
+                <input type="number" className='form-group-input' placeholder="0"
+                required onChange={(e) => setProjectduration(e.target.value )} min={0} />
+                </div>
 
-        
+                <div className="form-group">
+                <label>Funding Type</label>
+                <select
+                  className="form-group-input"
+                  required
+                  onChange={(e) => setFundingType(e.target.value)}
+                  defaultValue=""
+                >
+                  <option value="" disabled>Select funding type</option>
+                  <option value="fiat">Fiat</option>
+                  <option value="crypto">Crypto</option>
+                </select>
+              </div>
+           </div>
+              
+        </div>
+          <button className="create-project-submit" type="submit">Create Project</button>
+        </form>
 
-      <button type="submit">Create Project</button>
-    </form>
+    </div>
+    </>
   );
 }
