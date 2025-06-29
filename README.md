@@ -7,11 +7,11 @@ It combines **Web3** and **AI** to help users launch, validate, and grow ideas i
 
 ## Features
 
-- 🎯 Decentralized launchpad for founders and builders
-- 🤖 AI-powered business tools and analytics
-- 📜 On-chain certification for project credibility
-- 🔐 Integrated Web3 wallet authentication
-- 🛠️ Tools for idea submission, collaboration, and funding
+- Decentralized launchpad for founders and builders
+- AI-powered business tools and analytics
+- On-chain certification for project credibility
+- Integrated Web3 wallet authentication
+- Tools for idea submission, collaboration, and funding
 
 ---
 
