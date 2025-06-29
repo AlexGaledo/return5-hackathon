@@ -31,6 +31,7 @@ It combines **Web3** and **AI** to help users launch, validate, and grow ideas i
 - 🔗[Visit TechTopia@](https://return5-techtopia.vercel.app)
 - click Login, and click register
 - once registed, go to dashboard and click get started
-- connect your web3 wallet to create a project deployed in web3 (currently sepolia testnet).  
+- connect your web3 wallet via the connect button
+- fill up the information to create a project deployed in web3 (currently sepolia testnet).  
 
 
