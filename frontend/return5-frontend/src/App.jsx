@@ -46,7 +46,7 @@ export default function App() {
                 <Route path="*" element={<ErrorPage/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
                 {/* Rquires login status */}
-                <Route path="/home" element = {<RouteLock><Home/></RouteLock>}/>
+                <Route path="/home" element = {<Home/>}/>
                 <Route path="/create-project/:projectRouteId" element={<RouteLock><CreateProject/></RouteLock>}/>
                 <Route path="/browse-projects" element={<RouteLock><BrowseProjects/></RouteLock>}/>
             </Routes>
