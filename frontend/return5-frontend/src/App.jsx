@@ -38,9 +38,8 @@ export default function App() {
         <userContext.Provider value={{ user, setUser }}> 
         <projectsContext.Provider value={{ projects, setProjects}}>
         {/*-------------------------------------------------------------------------------------------------*/}
-            <Header/>
             <Routes>
-                <Route path="/" element={<LandingPage/>}/>
+                <Route path="/" element={<LoginPage/>}/>
                 <Route path="*" element={<ErrorPage/>}/>
                 <Route path="sign-account" element={<LoginPage/>}/>
                 {/* Rquires login status */}
