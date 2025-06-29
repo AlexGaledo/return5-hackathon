@@ -28,7 +28,8 @@ def login():
     return jsonify({
         'id': user_doc['id'],
         'access_token':token,
-        'response':'user logged in'
+        'response':'user logged in',
+        'username': username
     }),200
 
 

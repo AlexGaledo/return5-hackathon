@@ -38,7 +38,7 @@ export default function Home(){
         <>
             <div className="dashboard">
                 <img src={Dashboard} className='DashboardPNG'/>
-                <p className="introduction">Hello, Leony</p>
+                <p className="introduction">{`Hello!,${user.username}`}</p>
                 <p className="introduction2">Ready to launch your tech startup?</p>
                 <p className="introduction3">Connect your wallet to get started.</p>
                 <button className="get-started" onClick={createProject}>Get Started</button>

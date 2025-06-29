@@ -30,6 +30,7 @@
 }
 
 .login-button{
+    margin-top: -5px;
     width: 102px;
     height: 55px;
     border-radius: 10px;
