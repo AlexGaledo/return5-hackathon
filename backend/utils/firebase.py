@@ -1,18 +1,20 @@
 import os
 import json
+import base64
 import firebase_admin
 from firebase_admin import credentials, firestore
-from config import Config
+from config import Config 
 
 
-firebase_key_json_str = Config.firebase_key
+try:
+    firebase_key_json = base64.b64decode(Config.firebase_key).decode('utf-8')
+    firebase_key_dict = json.loads(firebase_key_json)
+except Exception as e:
+    raise ValueError("Invalid Base64 or JSON in firebase_key") from e
 
-
-firebase_key_dict = json.loads(firebase_key_json_str)
-
-cred = credentials.Certificate(firebase_key_dict)
 
 if not firebase_admin._apps:
+    cred = credentials.Certificate(firebase_key_dict)
     firebase_admin.initialize_app(cred)
 
 db = firestore.client()
