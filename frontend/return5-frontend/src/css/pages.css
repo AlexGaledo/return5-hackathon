@@ -60,12 +60,16 @@
 
 .submitLogin, .submitRegister {
   padding: 12px;
-  background-color: #007bff;
+  background-color: #8098F9;
   color: white;
   font-weight: bold;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.submitLogin:hover, .submitRegister:hover{
+  transform:scale(1.02);
 }
 
 .submitLogin:disabled {
@@ -75,9 +79,13 @@
 
 .toggleText {
   margin-top: 20px;
-  color: #007bff;
+  color: #8098F9;
   cursor: pointer;
   font-size: 14px;
+}
+
+.toggleText:hover{
+  color: #b3c7ff;
 }
 
 /* Image section */
