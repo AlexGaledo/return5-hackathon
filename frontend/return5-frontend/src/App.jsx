@@ -48,7 +48,7 @@ export default function App() {
                 {/* Rquires login status */}
                 <Route path="/home" element = {<RouteLock><Home/></RouteLock>}/>
                 <Route path="/create-project/:projectRouteId" element={<RouteLock><CreateProject/></RouteLock>}/>
-                <Route path="/browse-projects" element={<RouteLock><BrowseProjects/></RouteLock>}/>
+                <Route path="/browse-projects" element={<BrowseProjects/>}/>
             </Routes>
         {/*-------------------------------------------------------------------------------------------------*/}
         </projectsContext.Provider>
