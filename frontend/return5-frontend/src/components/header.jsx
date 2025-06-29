@@ -4,6 +4,8 @@ import { loginStatusContext, walletContext } from "../App";
 import { sepolia } from "thirdweb/chains";
 import { client } from "../api/thirdweb"; // your Thirdweb client
 import { useNavigate } from "react-router-dom";
+import techtopiapink from "../assets/techtopia-pink.jpg"
+import techtopiadark from "../assets/techtopia-dark.jpg"
 
 
 export default function Header() {
@@ -30,7 +32,11 @@ export default function Header() {
 
   return (
     <div className="header-area">
-      <p className="project-title">TechTopia</p>
+      <img
+          src={techtopiadark}
+          alt="TechTopia"
+          className="project-title"
+        />
       <div className="navtoolbox">
         <p className="navtools">Courses & Certification</p>
         <p className="navtools" onClick={browseProjects}>Browse Projects</p>

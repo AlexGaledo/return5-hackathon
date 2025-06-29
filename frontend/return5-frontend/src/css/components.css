@@ -9,7 +9,7 @@
 
 .header-area{
     flex-direction: row;
-    margin-left: 70px;
+    margin-left: 50px;
 }
 
 .navtoolbox{
@@ -17,7 +17,7 @@
     letter-spacing: .5px;
     height: auto;
     margin-top: 10px;
-    gap: 25px;
+    gap: 15px;
     justify-content: right;
 }
 
