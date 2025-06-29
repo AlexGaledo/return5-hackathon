@@ -3,6 +3,11 @@ import ByteBuddy from '../assets/ByteBuddy.png';
 import RainCheck from '../assets/RainCheck.png';
 import TaglishAI from '../assets/TaglishAI.png';
 import BuildStartup from '../assets/BuildStartup.png';
+import Funds from '../assets/Funds.png';
+import Startup from '../assets/Startup.png';
+import Avatar1 from '../assets/Avatar1.png';
+import Avatar2 from '../assets/Avatar2.png';
+import Avatar3 from '../assets/Avatar3.png';
 export const LandingPage = () =>{
   return(
     <>
@@ -61,7 +66,66 @@ export const LandingPage = () =>{
         <img src={BuildStartup} className='BuildStartupPNG'/>
       </div>
     </div>
+    <p className="explore-courses-title">Explore Courses</p>
+    <div className="explore-courses-container">
+      <div className="course">
+        <img src={Startup} className='CoursesPNG'/>
+        <p className="topic2">Startup 101: From Idea to MVP</p>
+        <p className="explanation2">Learn how to validate your startup idea, design a lean MVP, and prepare your product for public launch — no business degree required.</p>
+      </div>
+      <div className="course">
+        <img src={Funds} className='CoursesPNG'/>
+        <p className="topic2">Raising Funds: Equity, Donations, and Web3 M...</p>
+        <p className="explanation2">Understand the differences between equity-based, donation-based, and crypto funding — and how to choose the right model for your st...</p>
+      </div>
+    </div>
+    <p className="community-title">Community</p>
+    <div className="community-container">
+      <div className="community">
+        <div className="community-text">
+         "This platform gave me the confidence to finally pitch my side project. The AI helped...
+        </div>
+        <div className="community-name">
+          <div className="community-picture"><img src={Avatar1} className='AvatarPNG'/></div>
+          <div className="community-description">
+            <p>Aira D.</p>
+            <p className="profession">Student App Developer</p>
+          </div>
+        </div>
+      </div>
+      <div className="community">
+         <div className="community-text">
+         “I’ve joined other platforms, but this one actually understands local builders...
+        </div>
+        <div className="community-name">
+          <div className="community-picture"><img src={Avatar2} className='AvatarPNG'/></div>
+          <div className="community-description">
+            <p>Carla T.</p>
+            <p className="profession">Startup Founder, Cebur</p>
+          </div>
+        </div>
+      </div>
+      
+      <div className="community">
+         <div className="community-text">
+         “I used the free courses to build my first pitch deck and got real feedback. It’s like a...
+        </div>
+        <div className="community-name">
+          <div className="community-picture"><img src={Avatar3} className='AvatarPNG'/></div>
+          <div className="community-description">
+            <p>Nica R.</p>
+            <p className="profession">UX Design Student</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="button-container">
+        <button className='top-button'>Back to Top</button>
+      </div>
     </>
+
+    
     
   )
 }
