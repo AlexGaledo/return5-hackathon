@@ -10,7 +10,23 @@ import Avatar2 from '../assets/Avatar2.png';
 import Avatar3 from '../assets/Avatar3.png';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import { useContext } from 'react';
+import { loginStatusContext } from '../App';
+import { useNavigate } from 'react-router-dom';
 export const LandingPage = () =>{
+
+  const {loginStatus} = useContext(loginStatusContext);
+  const navigate = useNavigate();
+
+  const handleClick  = () => {
+    if(!loginStatus){
+      navigate('/login');
+    }
+    else{
+      navigate('/home');
+    }
+  }
+
   return(
     <>
     <Header/>
@@ -18,7 +34,7 @@ export const LandingPage = () =>{
       <p className="title">Launch Your Tech Startup</p>
       <p className="title2">with Confidence</p>
       <p className="title3">Learn. Build. Launch.</p>
-      <button className="start-project-button">Start a Project</button>
+      <button className="start-project-button" onClick={handleClick}>Start a Project</button>
     </div>
 
     <div className="image1-container">
@@ -60,7 +76,7 @@ export const LandingPage = () =>{
         <p className="topic1">Global Reach, Local Roots</p>
         <p className="explanation1">Publish projects with crypto-based smart contracts, get backed internationally, and proudly represent Filipino innovation on the global stage.</p>
         <div className="project-buttons">
-          <button className='project-start'>Start a Project</button>
+          <button className='project-start' onClick={handleClick}>Start a Project</button>
           <button className='project-explore'>Explore Projects</button>
         </div>
       </div>
@@ -122,9 +138,8 @@ export const LandingPage = () =>{
         </div>
       </div>
     </div>
-
     <div className="button-container">
-        <button className='top-button'>Back to Top</button>
+        <button className='top-button'onClick={window.scrollTo({ top: 0, behavior: 'smooth' })} >Back to Top</button>
     </div>
     <Footer/>
     </>

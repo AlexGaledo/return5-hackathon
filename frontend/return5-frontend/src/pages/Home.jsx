@@ -36,13 +36,12 @@ export default function Home(){
     }
     return(
         <>
-        <Header/>
             <div className="dashboard">
                 <img src={Dashboard} className='DashboardPNG'/>
                 <p className="introduction">Hello, Leony</p>
                 <p className="introduction2">Ready to launch your tech startup?</p>
                 <p className="introduction3">Connect your wallet to get started.</p>
-                <button className="get-started">Get Started</button>
+                <button className="get-started" onClick={createProject}>Get Started</button>
             </div>
             <div className="overview-title-container">
                 My Project Overview
@@ -50,12 +49,12 @@ export default function Home(){
             <div className="project1">
                 <div className="project-left">
                     <div className="project-text">
-                        <p className="project-heading">Heading</p>
+                        <p className="project-heading">Project Title</p>
                         <p className="project-desc">A subheading for this section, as long or as short as you like</p>
                     </div>
                     <div className="project-overview-buttons">
-                        <button className="project-overview-button">Button</button>
-                        <button className="project-overview-button2">Secondary Button</button>
+                        <button className="project-overview-button">Edit</button>
+                        <button className="project-overview-button2">View Project</button>
                     </div>
                 </div>
                 <div className="project-right">
@@ -68,28 +67,28 @@ export default function Home(){
                 </div>
                 <div className="project-right2">
                     <div className="project-text">
-                        <p className="project-heading">Heading</p>
+                        <p className="project-heading">Project Title</p>
                         <p className="project-desc">A subheading for this section, as long or as short as you like</p>
                     </div>
                     <div className="project-overview-buttons">
-                        <button className="project-overview-button">Button</button>
-                        <button className="project-overview-button2">Secondary Button</button>
+                        <button className="project-overview-button">Edit</button>
+                        <button className="project-overview-button2">View Project</button>
                     </div>
                 </div>
             </div>
             <div className="below-overview">
                 <div className="below-overview-left">
                     <img src={Project3} className='Project1PNG'/>
-                    <p className="below-overview-text1">Subheading</p>
+                    <p className="below-overview-text1">Project1</p>
                     <p className="below-overview-text2">Description</p>
 
                 </div>
                 <div className="below-overview-right">
                     <img src={Project1} className='ProjectPNG'/>
-                    <p className="below-overview-text1">Subheading</p>
+                    <p className="below-overview-text1">Project2</p>
                     <p className="below-overview-text2">Description</p>
                     <img src={Project4} className='ProjectPNG'/>
-                    <p className="below-overview-text1">Subheading</p>
+                    <p className="below-overview-text1">Project3</p>
                     <p className="below-overview-text2">Description</p>
                 </div>
             </div>
@@ -125,7 +124,7 @@ export default function Home(){
                 </div>
             </div>
             <div className="button-container">
-                <button className='top-button'>Back to Top</button>
+                <button className='top-button'onClick={window.scrollTo({ top: 0, behavior: 'smooth' })} >Back to Top</button>
             </div>
             <Footer/>
         </>

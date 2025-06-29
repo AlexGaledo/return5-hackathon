@@ -60,9 +60,13 @@ export default function CreateProject() {
         throw new Error("Backend rejected project creation.");
       }
     } catch (err) {
-            alert("Unexpected Error: " + err.message);      
+            alert("error, please connect your web3 wallet. ");      
     }setIsLoading(false);
   };
+
+  const goBackHome = () =>{
+    navigate('/home');
+  }
 
   useEffect(() => {
     setNoHeaderPage(true);
@@ -73,7 +77,7 @@ export default function CreateProject() {
     <>
     
     <div className="create-project-header">
-        <p className="project-title">{`< back to dashboard `}</p>
+        <p onClick={goBackHome} className="project-title">{`< back to dashboard `}</p>
            <ConnectButton s
           client={client}
           chain={sepolia}
@@ -117,7 +121,7 @@ export default function CreateProject() {
             
           <div className="leftbox">
             <div className="form-group">
-                <label>Project Goal (in wei)</label>
+                <label>Project Goal (eth)</label>
                 <input type="number" className='form-group-input' placeholder="0"
                 required onChange={(e) => setProjectGoal(e.target.value)} min={0}/>
                 </div>
@@ -137,7 +141,7 @@ export default function CreateProject() {
                   defaultValue=""
                 >
                   <option value="" disabled>Select funding type</option>
-                  <option value="fiat">Fiat</option>
+                  <option value="fiat" disabled>Fiat</option>
                   <option value="crypto">Crypto</option>
                 </select>
               </div>
