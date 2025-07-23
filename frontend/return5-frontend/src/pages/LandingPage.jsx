@@ -13,6 +13,7 @@ import Footer from '../components/footer';
 import { useContext } from 'react';
 import { loginStatusContext } from '../App';
 import { useNavigate } from 'react-router-dom';
+import { ChatBot } from '../components/chatbot';
 export const LandingPage = () =>{
 
   const {loginStatus} = useContext(loginStatusContext);
@@ -141,6 +142,7 @@ export const LandingPage = () =>{
     <div className="button-container">
         <button className='top-button'onClick={window.scrollTo({ top: 0, behavior: 'smooth' })} >Back to Top</button>
     </div>
+    <ChatBot/>
     <Footer/>
     </>
   )

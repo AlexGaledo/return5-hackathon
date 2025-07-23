@@ -10,12 +10,13 @@ import App from "./App.jsx";
 
 import { ThirdwebProvider } from "thirdweb/react";
 import { client } from "./api/thirdweb"; // createThirdwebClient is defined here
+import { Wrapper } from "./components/appwrapper.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThirdwebProvider client={client}>
       <BrowserRouter>
-        <App />
+        <Wrapper/>
       </BrowserRouter>
     </ThirdwebProvider>
   </StrictMode>

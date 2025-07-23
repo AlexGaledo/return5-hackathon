@@ -60,7 +60,7 @@ export default function CreateProject() {
         throw new Error("Backend rejected project creation.");
       }
     } catch (err) {
-            alert("error, please connect your web3 wallet. ");      
+            alert("error, wallet problem ");      
     }setIsLoading(false);
   };
 
