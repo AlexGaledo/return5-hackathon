@@ -5,3 +5,4 @@ bcrypt
 gunicorn
 firebase-admin
 python-dotenv
+google-genai
